@@ -1,37 +1,55 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/ninakibria/AACoding02-6/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>CodePen - AACoding02</title>
+<style>
+.correct{
+  background:lightgreen;
+}
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ninakibria/AACoding02-6/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+.incorrect{
+  background:red;
+}
+</style>
+</head>
+<body translate="no">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<h1>Nina's Math Problems</h1>
+<ol>
+<li>\( 2^3 \) <input data-correct="8" /> </li>
+<li>\( \sqrt[3]{8} \) <input data-correct="2" /></li>
+<li>\( 8^\frac{1}{3} \) <input data-correct="2" /></li>
+<li>\( \sqrt[3]{-12}\sqrt[3]{-18} \) <input data-correct="6" /></li>
+<li>\( 7^3 \) <input data-correct="343" /></li>
+<li>\( \sqrt[5]{243}\) <input data-correct="3" /></li>
+<li>\( 1^{-7}\) <input data-correct="1" /></li>
+<li>\( 3^\frac{1}{4} \) <input data-correct="3/4" /></li>
+<li>\( \frac {\sqrt 81}{\sqrt[3] 8} \) <input data-correct="9/2" /></li>
+<li>\( (-2^\frac{1}{2})^2 \) <input data-correct="-1" /></li>
+</ol>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script id="rendered-js">
+$("input").change(onChange);
+function onChange(evt){
+  let correct = $(this).data("correct");
+  let response = $(this).val();
+  
+  if(correct == response){
+    $(this).removeClass('incorrect').addClass("correct");
+  } else{
+    $(this).removeClass('correct').addClass("incorrect");
+  }
+    if (response == ""){
+    $(this).removeClass("incorrect").removeclass("correct");
+  }
+}
+    </script>
+</body>
+</html>
